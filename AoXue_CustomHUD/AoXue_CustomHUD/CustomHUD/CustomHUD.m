@@ -77,25 +77,38 @@
     CGFloat w = size.width < 50 ? 70:size.width;
     CGFloat w1 = w > WIDTH-40 ? WIDTH-40:w;
     weakSelf.bgView.frame = CGRectMake(0, 0, w1+20, size.height+80);
-    weakSelf.bgView.center = [CustomHUD shareCustomHud].center;
+    weakSelf.bgView.center = weakSelf.center;
     
     weakSelf.activityView.frame = CGRectMake(0, 0, 50, 50);
     weakSelf.activityView.center = CGPointMake(weakSelf.bgView.frame.size.width/2, 35);
     [weakSelf.activityView startAnimating];
     
     weakSelf.contentlabel.frame = CGRectMake(10, DF_nowheight(weakSelf.activityView)+10, w1, size.height);
-    [CustomHUD shareCustomHud].contentlabel.text = content;
-    [[CustomHUD shareCustomHud] addHUDWithSelf];
+    weakSelf.contentlabel.text = content;
+    [weakSelf addHUDWithSelf];
+    
+    [weakSelf performSelector:@selector(stop) withObject:nil afterDelay:time];
+}
 
-    [UIView animateWithDuration:time animations:^{
-        weakSelf.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [weakSelf.activityView stopAnimating];
-            [weakSelf removeFromSuperview];
-            weakSelf.alpha = 1.0;
-        }
-    }];
+/**
+ *  修改显示内容
+ *
+ *  @param text
+ */
++(void)changeShowText:(NSString *)text
+{
+    CustomHUD *weakSelf = [CustomHUD shareCustomHud];
+    CGSize size = [weakSelf labelText:text fondSize:14.0 width:WIDTH-60];
+    CGFloat w = size.width < 50 ? 70:size.width;
+    CGFloat w1 = w > WIDTH-40 ? WIDTH-40:w;
+    weakSelf.bgView.frame = CGRectMake(0, 0, w1+20, size.height+80);
+    weakSelf.bgView.center = [CustomHUD shareCustomHud].center;
+    
+    weakSelf.activityView.frame = CGRectMake(0, 0, 50, 50);
+    weakSelf.activityView.center = CGPointMake(weakSelf.bgView.frame.size.width/2, 35);
+    
+    weakSelf.contentlabel.frame = CGRectMake(10, DF_nowheight(weakSelf.activityView)+10, w1, size.height);
+    weakSelf.contentlabel.text = text;
 }
 
 /**
@@ -153,6 +166,23 @@
  *  停止并隐藏
  */
 +(void)stopHidden
+{
+    __block CustomHUD *weakSelf = [CustomHUD shareCustomHud];
+    [UIView animateWithDuration:0.5 animations:^{
+        weakSelf.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [weakSelf.activityView stopAnimating];
+            [weakSelf removeFromSuperview];
+            weakSelf.alpha = 1.0;
+        }
+    }];
+}
+
+/**
+ *  停止并隐藏
+ */
+-(void)stop
 {
     __block CustomHUD *weakSelf = [CustomHUD shareCustomHud];
     [UIView animateWithDuration:0.5 animations:^{

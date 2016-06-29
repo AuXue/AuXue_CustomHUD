@@ -24,7 +24,7 @@
     for (int i = 0; i < array.count; i++) {
         UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         touchBtn.frame = CGRectMake(0, 0, self.view.frame.size.width-60, 30);
-        touchBtn.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/8*(i+1)-30);
+        touchBtn.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/4*(i+1)-30);
         [touchBtn setTitle:[array objectAtIndex:i] forState:UIControlStateNormal];
         [touchBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         touchBtn.layer.cornerRadius = 8.0;
@@ -42,7 +42,8 @@
     switch (sender.tag) {
         case 0:
         {
-            [CustomHUD createHudCustomTime:2.0 showContent:@"显示风火轮以及提示语2秒后消失"];
+            [CustomHUD createHudCustomTime:10.0 showContent:@"显示风火轮以及提示语2秒后消失"];
+            [self performSelector:@selector(changeContent) withObject:nil afterDelay:5.0];
         }
             break;
         case 1:
@@ -63,7 +64,13 @@
 
 -(void)hiddenHUD
 {
+    [CustomHUD changeShowText:@"修改后的内容"];
     [CustomHUD stopHidden];
+}
+
+-(void)changeContent
+{
+    [CustomHUD changeShowText:@"修改后的内容"];
 }
 
 - (void)didReceiveMemoryWarning {

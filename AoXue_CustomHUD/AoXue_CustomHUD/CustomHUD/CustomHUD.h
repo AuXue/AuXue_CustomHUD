@@ -47,4 +47,11 @@ typedef void(^HiddenHud)();
  */
 +(void)createShowContent:(NSString *)content;
 
+/**
+ *  修改显示内容
+ *
+ *  @param text
+ */
++(void)changeShowText:(NSString *)text;
+
 @end
