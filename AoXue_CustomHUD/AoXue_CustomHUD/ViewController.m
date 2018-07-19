@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSArray *array = [NSArray arrayWithObjects:@"显示风火轮以及提示语2秒后消失",@"根据需求消失",@"仅显示提示语", nil];
+    NSArray *array = [NSArray arrayWithObjects:@"显示风火轮以及提示语10秒后消失",@"根据需求消失",@"仅显示提示语", nil];
     
     for (int i = 0; i < array.count; i++) {
         UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -42,7 +42,7 @@
     switch (sender.tag) {
         case 0:
         {
-            [CustomHUD createHudCustomTime:10.0 showContent:@"显示风火轮以及提示语2秒后消失"];
+            [CustomHUD createHudCustomTime:10.0 showContent:@"显示风火轮以及提示语10秒后消失"];
             [self performSelector:@selector(changeContent) withObject:nil afterDelay:5.0];
         }
             break;

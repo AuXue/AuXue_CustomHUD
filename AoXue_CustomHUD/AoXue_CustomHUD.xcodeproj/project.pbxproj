@@ -13,7 +13,7 @@
 		3CC457C61D22DA3C0003DCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC457C41D22DA3C0003DCD2 /* Main.storyboard */; };
 		3CC457C81D22DA3C0003DCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC457C71D22DA3C0003DCD2 /* Assets.xcassets */; };
 		3CC457CB1D22DA3C0003DCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC457C91D22DA3C0003DCD2 /* LaunchScreen.storyboard */; };
-		3CC457D51D22DA710003DCD2 /* CustomHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC457D41D22DA710003DCD2 /* CustomHUD.m */; };
+		3CDA269D1D7D1456000074B2 /* CustomHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA269C1D7D1456000074B2 /* CustomHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		3CC457C71D22DA3C0003DCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CC457CA1D22DA3C0003DCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CC457CC1D22DA3C0003DCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CC457D31D22DA710003DCD2 /* CustomHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHUD.h; sourceTree = "<group>"; };
-		3CC457D41D22DA710003DCD2 /* CustomHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHUD.m; sourceTree = "<group>"; };
+		3CDA269B1D7D1456000074B2 /* CustomHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHUD.h; sourceTree = "<group>"; };
+		3CDA269C1D7D1456000074B2 /* CustomHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +61,11 @@
 		3CC457BA1D22DA3B0003DCD2 /* AoXue_CustomHUD */ = {
 			isa = PBXGroup;
 			children = (
-				3CC457D21D22DA710003DCD2 /* CustomHUD */,
 				3CC457BE1D22DA3C0003DCD2 /* AppDelegate.h */,
 				3CC457BF1D22DA3C0003DCD2 /* AppDelegate.m */,
 				3CC457C11D22DA3C0003DCD2 /* ViewController.h */,
 				3CC457C21D22DA3C0003DCD2 /* ViewController.m */,
+				3CDA269A1D7D1456000074B2 /* CustomHUD */,
 				3CC457C41D22DA3C0003DCD2 /* Main.storyboard */,
 				3CC457C71D22DA3C0003DCD2 /* Assets.xcassets */,
 				3CC457C91D22DA3C0003DCD2 /* LaunchScreen.storyboard */,
@@ -83,11 +83,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3CC457D21D22DA710003DCD2 /* CustomHUD */ = {
+		3CDA269A1D7D1456000074B2 /* CustomHUD */ = {
 			isa = PBXGroup;
 			children = (
-				3CC457D31D22DA710003DCD2 /* CustomHUD.h */,
-				3CC457D41D22DA710003DCD2 /* CustomHUD.m */,
+				3CDA269B1D7D1456000074B2 /* CustomHUD.h */,
+				3CDA269C1D7D1456000074B2 /* CustomHUD.m */,
 			);
 			path = CustomHUD;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			files = (
 				3CC457C31D22DA3C0003DCD2 /* ViewController.m in Sources */,
 				3CC457C01D22DA3C0003DCD2 /* AppDelegate.m in Sources */,
-				3CC457D51D22DA710003DCD2 /* CustomHUD.m in Sources */,
+				3CDA269D1D7D1456000074B2 /* CustomHUD.m in Sources */,
 				3CC457BD1D22DA3C0003DCD2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
